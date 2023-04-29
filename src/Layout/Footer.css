@@ -1,4 +1,5 @@
 .footer-container {
+  width: 100vw;
   padding: 3rem;
 
   display: flex;

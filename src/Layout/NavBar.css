@@ -19,7 +19,8 @@
 }
 
 .navbar-elements {
-  display: flex;
+  display: none;
+
   align-items: center;
 }
 
@@ -42,6 +43,8 @@
 
 .navbar-button:hover {
   background-color: #FFFFFF;
+
+  color: #F5802A !important;
 }
 
 .navbar-elements a {
@@ -57,4 +60,19 @@
 
 .navbar-elements > * + * {
   margin-left: 4rem;
+}
+
+.navbar-hamburger-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .navbar-elements {
+    display: flex;
+  }
+
+  .navbar-hamburger-icon {
+    display: none;
+  }
 }
