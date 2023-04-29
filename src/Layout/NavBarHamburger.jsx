@@ -7,7 +7,7 @@ const NavBarHamburger = ({ isOpen, handleClose }) => {
     <div className="hamburger-main-container" onClick={handleClose}>
       <div className="hamburger-container" onClick={e => e.stopPropagation()}>
         <div className="hamburger-close-container" onClick={handleClose}>
-          <i class="fas fa-times"></i>
+          <i className="fas fa-times"></i>
         </div>
         <div className="hamburger-elements">
           <a href="/" className="navbar-button">Inicio sesión</a>
