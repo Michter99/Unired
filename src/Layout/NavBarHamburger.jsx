@@ -8,7 +8,7 @@ const NavBarHamburger = ({ isOpen, handleClose }) => {
         <div className="hamburger-close-container" onClick={handleClose}>
           <i className="fas fa-times"></i>
         </div>
-        <div className="hamburger-elements">
+        <div className="mt-5 hamburger-elements">
           <Link onClick={handleClose} to="/" className="navbar-button">
             Inicio sesión
           </Link>

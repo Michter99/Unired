@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700;900&display=swap');
+
 .hamburger-main-container {
   width: 100vw;
   height: 100vh;
@@ -9,6 +11,7 @@
   transition: background-color 300ms ease-in-out, opacity 300ms ease-in-out;
   pointer-events: none;
   z-index: 999;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .hamburger-main-container.open {
