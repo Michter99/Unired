@@ -1,11 +1,7 @@
-import Login from "./Login/Login"
-import Layout from "./Layout/Layout";
+import Home from "./Home/Home";
 
 function App() {
-  return <Layout />
-  return (
-    <Login />
-  );
+  return <Home />
 }
 
 export default App;

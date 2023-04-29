@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 import Logo from "../Assets/logoUNIRED.svg";
 import NavBarHamburger from "./NavBarHamburger";
@@ -17,23 +17,25 @@ function NavBar() {
           <i className="fas fa-bars"></i>
         </div>
 
-        <img
-          className="navbar-logo"
-          src={Logo}
-          alt="Logo de Unired"
-        />
+        <Link to="/">
+          <img
+            className="navbar-logo"
+            src={Logo}
+            alt="Logo de Unired"
+          />
+        </Link>
 
         <div className="navbar-elements">
-          <a href="/">Inicio</a>
-          <a href="/">Noticias</a>
-          <a href="/">Colaboradores</a>
-          <a href="/">Contacto</a>
+          <Link to="/">Inicio</Link>
+          <Link to="/noticias">Noticias</Link>
+          <Link to="/colaboradores">Colaboradores</Link>
+          <Link to="/contacto">Contacto</Link>
           <a href="/" className="navbar-button">Inicio sesión</a>
         </div>
       </div>
 
       <NavBarHamburger isOpen={isHamburgerMenuOpen} handleClose={() => setHamburgerMenuOpen(false)} />
-    </nav>
+    </nav >
   );
 }
 
