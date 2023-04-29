@@ -29,7 +29,7 @@
   padding-right: 2rem;
   padding-left: 2rem;
 
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 
   border-style: solid;
   border-color: #F5802A;
@@ -57,36 +57,4 @@
 
 .navbar-elements > * + * {
   margin-left: 4rem;
-}
-
-.footer-container {
-  padding: 3rem;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  color: #FFFFFF;
-  background-color: #55565F
-}
-
-.footer-social {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-
-  font-size: 25px;
-}
-
-.footer-social a {
-  color: #FFFFFF;
-  text-decoration: none;
-}
-
-.footer-social > * + * {
-  margin-left: 3rem;
-}
-
-.footer-logo {
-  height: 50px;
 }
