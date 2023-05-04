@@ -1,5 +1,5 @@
 .footer-container {
-  width: 100vw;
+  width: 100%;
   padding: 3rem;
 
   display: flex;
@@ -23,7 +23,7 @@
   text-decoration: none;
 }
 
-.footer-social > * + * {
+.footer-social>*+* {
   margin-left: 3rem;
 }
 

@@ -8,6 +8,7 @@ import MissionLogo from "../Assets/mountain.png";
 import ObjectiveLogo from "../Assets/target.png";
 import VisionLogo from "../Assets/open-eye.png";
 import "./Inicio.css";
+import Footer from "../Layout/Footer";
 
 const Inicio = () => {
   return (
@@ -18,7 +19,7 @@ const Inicio = () => {
           src={Fondo}
           alt='Fondo principal'
         />
-        <img className='dark-background' src={Darker} alt='Fondo principal' />
+        <img className='dark-background img-fluid' src={Darker} alt='Fondo principal' />
         <div className='start-main-title'>
           <img className='start-main-logo' src={Logo} alt='Logo de Unired' />
           <h1 className='start-main-subtitle'>
@@ -97,6 +98,7 @@ const Inicio = () => {
           </p>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
