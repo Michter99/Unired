@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700;900&display=swap");
+
+.contacto-container {
+    /*display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    align-items: center;*/
+    width: 70%;
+    margin: auto;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+.info-container {
+    display: flex;
+    justify-content: flex-start;
+    background-color: blue;
+}
+
+.colaborar-container {
+    margin-bottom: 71px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 25px 3px rgba(57, 57, 57, 0.26);
+}
+
+.formulario-container {
+    padding-top: 53px;
+    padding-bottom: 53px;
+    padding-left: 30px;
+    box-shadow: 0px 4px 25px 3px rgba(57, 57, 57, 0.26);
+    border-radius: 20px;
+}
+
+/*.btn-primary {
+    background-color: brown;
+}*/
