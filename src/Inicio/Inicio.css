@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700;900&display=swap");
+
+.start-main {
+  height: 80vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+
+  font-family: "Montserrat", sans-serif;
+}
+
+.start-main-background {
+  height: 100%;
+  width: 100%;
+
+  z-index: 0;
+}
+
+.dark-background {
+  width: 100%;
+  height: 80vh;
+
+  position: absolute;
+}
+
+.start-main-title {
+  height: 80vh;
+  width: 100%;
+
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.start-main-logo {
+  width: 35%;
+  margin-bottom: 20px;
+}
+
+.start-main-subtitle {
+  color: white;
+  font-size: 42px;
+}
+
+.white-background {
+  width: 100%;
+  height: 40vh;
+}
+
+.who-are-we-container {
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.who-are-we-image {
+  height: 40vh;
+  padding-left: 100px;
+  margin-top: 100px;
+}
+
+.who-are-we-text {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+
+  padding-right: 100px;
+}
+
+.orange-title {
+  color: #f5802a;
+  font-weight: 700;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.description {
+  color: black;
+  font-weight: 400;
+  font-size: 25px;
+}
+
+.purplish-background {
+  width: 100%;
+  height: 70vh;
+
+  background-color: #f6f8ff;
+  z-index: 0;
+}
+
+.mov-container {
+  width: 100%;
+  height: 70vh;
+  margin-top: 50px;
+
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8%;
+}
+
+.item-container {
+  width: 25%;
+  height: 50vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+}
+
+.item-logo {
+  width: 18vh;
+  margin-bottom: 40px;
+}
+
+.item-description {
+  color: black;
+  font-weight: 400;
+  font-size: 25px;
+  text-align: center;
+}
+
+.antecedent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.antecedent-background {
+  width: 100%;
+}
+
+.antecedent-container {
+  width: 70%;
+
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.antecedent-title {
+  color: #ffc92c;
+  font-family: "Montserrat", sans-serif;
+  font-size: 50px;
+}
+
+.antecendent-description {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  text-align: center;
+}
