@@ -1,20 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700;900&display=swap");
 
 .contacto-container {
-    /*display: flex;
-    justify-content: center;
-    flex-flow: column wrap;
-    align-items: center;*/
     width: 70%;
     margin: auto;
     font-family: "Montserrat", sans-serif;
-
 }
 
 .info-container {
     display: flex;
     justify-content: flex-start;
-    background-color: blue;
+    padding-bottom: 43px;
 }
 
 .colaborar-container {
@@ -34,6 +29,51 @@
     border-radius: 20px;
 }
 
-/*.btn-primary {
-    background-color: brown;
-}*/
+.btn-primary {
+    background-color: #FFC439 !important;
+    border-color: #FFC439 !important;
+    border-radius: 20px !important;
+    box-shadow: 0px 4px 25px rgba(57, 57, 57, 0.26);
+    padding-inline: 60px;
+}
+
+.div-boton{
+    display: flex;
+    justify-content: center;
+    padding-top: 45px;
+}
+
+.titulo-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+    padding-bottom: 43px;
+}
+
+h1 {
+    color: #F5802A;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 25px;
+    padding-right: 55px;
+}
+
+.formRow-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+input textarea {
+    border-radius: 5px;
+    border-color: #3B3B3B;
+    border-width: 1px;
+    background-color: #FFFFFF;
+    padding: 0.375rem 0.75rem;
+}

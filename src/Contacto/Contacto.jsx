@@ -4,7 +4,7 @@ import "./Contacto.css";
 const Contacto = () => {
     return (
         <div className="contacto-container">
-            <div>
+            <div className="titulo-container">
                 <h1>Contacto</h1>
             </div>
             <div className="info-container">
@@ -17,28 +17,25 @@ const Contacto = () => {
                     <li>Compártenos en redes sociales</li>
                     <li>Realiza una donación</li>
                 </ul>
-                <button className="btn-primary">Donar</button>
+                <div className="div-boton">
+                    <input class="btn btn-primary" type="button" value="Donar"></input>
+                </div>
             </div>
             <div className="formulario-container">
                 <h1>¿Te interesa saber más?</h1>
                 <p>Escríbenos y con gusto nos pondremos en contacto contigo</p>
-                <form>
-                    <div>
+                <form className="form-container">
+                    <div className="formRow-container">
                         <input type="text" placeholder="Nombre" required></input>
                         <input type="text" placeholder="Correo" required></input>
                     </div>
                     <input type="text" placeholder="Asunto" required></input>
-                    <input type="text" placeholder="Mensaje" required></input>
+                    <textarea placeholder="Mensaje" required></textarea>
                     <button>Enviar</button>
                 </form>
             </div>
         </div>
     );
-    /*return (
-        <>
-            <h1>Contacto page</h1>
-        </>
-    );*/
 };
 
 export default Contacto;
