@@ -1,7 +1,6 @@
 import React from "react";
 import Logo from "../Assets/logoUNIRED.svg";
 import Fondo from "../Assets/main-background.png";
-import Darker from "../Assets/dark-rectangle.png";
 import WhoAreWe from "../Assets/who-are-we.png";
 import Antecedent from "../Assets/antecedent-background.png";
 import MissionLogo from "../Assets/mountain.png";
@@ -16,11 +15,6 @@ const Inicio = () => {
         <img
           className="start-main-background"
           src={Fondo}
-          alt="Fondo principal"
-        />
-        <img
-          className="dark-background img-fluid"
-          src={Darker}
           alt="Fondo principal"
         />
         <div className="start-main-title">
