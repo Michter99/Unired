@@ -3,9 +3,10 @@ import Logo from "../Assets/logoUNIRED.svg";
 import Fondo from "../Assets/main-background.png";
 import WhoAreWe from "../Assets/who-are-we.png";
 import Antecedent from "../Assets/antecedent-background.png";
-import MissionLogo from "../Assets/mountain.png";
-import ObjectiveLogo from "../Assets/target.png";
-import VisionLogo from "../Assets/open-eye.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFlagCheckered, faBullseye, faEye } from '@fortawesome/free-solid-svg-icons';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import "./Inicio.css";
 
 const Inicio = () => {
@@ -47,34 +48,39 @@ const Inicio = () => {
       <div className="purplish-background">
         <div className="mov-container">
           <div className="item-container">
-            <img className="item-logo" src={MissionLogo} alt="Logo misión" />
-            <h1 className="orange-title">Misión</h1>
+            <div>
+              <FontAwesomeIcon icon={faFlagCheckered} style={{ fontSize: '40px', marginRight: '30px', color: '#f5802a' }} />
+              <span className="black-title">Misión</span>
+            </div>
             <p className="item-description">
               Coordinar acciones universitarias para prevenir y responder ante
               desastres en México
             </p>
           </div>
+
           <div className="item-container">
-            <img
-              className="item-logo"
-              src={ObjectiveLogo}
-              alt="Logo objetivo"
-            />
-            <h1 className="orange-title">Objetivo</h1>
+            <div>
+              <FontAwesomeIcon icon={faBullseye} style={{ fontSize: '40px', marginRight: '30px', color: '#f5802a' }} />
+              <span className="black-title">Objetivo</span>
+            </div>
             <p className="item-description">
               Fomentar cultura de prevención y atención ante desastres y
               organizar respuesta adecuada y articulada de la sociedad civil
               ante su ocurrencia.
             </p>
           </div>
+
           <div className="item-container">
-            <img className="item-logo" src={VisionLogo} alt="Logo visión" />
-            <h1 className="orange-title">Visión</h1>
+            <div>
+              <FontAwesomeIcon icon={faEye} style={{ fontSize: '40px', marginRight: '30px', color: '#f5802a' }} />
+              <span className="black-title">Visión</span>
+            </div>
             <p className="item-description">
               Ser una red universitaria autosustentable, eficaz y confiable que
               ayude a la sociedad ante desastres.
             </p>
           </div>
+
         </div>
       </div>
 
