@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Unired/static/css/main.9242c373.css",
-    "main.js": "/Unired/static/js/main.fac311ac.js",
+    "main.js": "/Unired/static/js/main.32625099.js",
     "static/media/main-background.png": "/Unired/static/media/main-background.8b87a59eac0e0366235c.png",
     "static/media/antecedent-background.png": "/Unired/static/media/antecedent-background.386488dc498dced7d9c2.png",
     "static/media/colaboradores-up.png": "/Unired/static/media/colaboradores-up.791b5be1aad229eee678.png",
@@ -12,10 +12,10 @@
     "static/media/logoUNIRED.svg": "/Unired/static/media/logoUNIRED.b2105b408c24998259b67add936c45d8.svg",
     "index.html": "/Unired/index.html",
     "main.9242c373.css.map": "/Unired/static/css/main.9242c373.css.map",
-    "main.fac311ac.js.map": "/Unired/static/js/main.fac311ac.js.map"
+    "main.32625099.js.map": "/Unired/static/js/main.32625099.js.map"
   },
   "entrypoints": [
     "static/css/main.9242c373.css",
-    "static/js/main.fac311ac.js"
+    "static/js/main.32625099.js"
   ]
 }
