@@ -1,27 +1,131 @@
+import { useEffect, useState } from "react";
+import { collection, getDocs, deleteDoc, doc, addDoc } from "firebase/firestore";
+import { firestore, auth } from "../Backend/firebaseConfig";
 import { Col, Row } from "react-bootstrap";
-import React, { useState } from "react";
-import Colaborador from "./Colaborador";
-import hormigas from "../Assets/colaboradores-tec.png";
-import lobos from "../Assets/colaboradores-ibero.png";
-import asua from "../Assets/colaboradores-anahuac.png";
-import bUp from "../Assets/colaboradores-up.png";
+import Colaborador from "./Colaborador"
 
 const Colaboradores = () => {
     const [activeCard, setActiveCard] = useState(null);
-    const colaboradores = [
-        { imgSrc: hormigas, name: "Hormigas del Instituto Tecnológico de Monterrey", description: "Hormigas se ve como un grupo estudiantil de liderazgo con presencia oficial en varios campi del Sistema ITESM, en los cuales se realicen proyectos sociales sustentables, se brinda capacitación de primeros auxilios y protección civil a la comunidad en general." },
-        { imgSrc: lobos, name: "Lobos Ibero de la Universidad Iberoamericana", description: "Lobos Ibero es una asociación estudiantil conformada por estudiantes y empleados que operan con cierta autonomía dentro y fuera de la Universidad, bajo los estatutos y el apoyo de la oficina de atención de alumnos de la UIA, enfocados a prevenir y atender desastres naturales." },
-        { imgSrc: asua, name: "Comité Estudiantil ASUA de la Universidad Anáhuac", description: "ASUA busca fomentar entre la comunidad universitaria el desarrollo de una conciencia social, sustentada en los valores universales que promueve el humanismo cristiano, impulsando su liderazgo y servicio al prójimo." },
-        { imgSrc: bUp, name: "B-UP de la Universidad Panamericana", description: "Brigadas UP busca capacitar a los alumnos de la Universidad Panamericana para que estén preparados y puedan actuar frente a cualquier desastre que se pueda presentar en cualquier momento y lugar. Buscando formar vínculos con expertos de los temas para profesionalizar sus actividades." },
-    ];
+    const [colaboradores, setColaboradores] = useState([]);
+    const [user, setUser] = useState(null);
+    const [newColaborador, setNewColaborador] = useState({
+        nombre: "",
+        descripcion: "",
+        linkImagen: "",
+    });
+
+    useEffect(() => {
+        const fetchColaboradoresData = async () => {
+            try {
+                const querySnapshot = await getDocs(collection(firestore, "Colaboradores"));
+                const colaboradoresData = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+                setColaboradores(colaboradoresData);
+            } catch (error) {
+                console.error("Error fetching Colaboradores data:", error);
+            }
+        };
+
+        fetchColaboradoresData();
+    }, []);
+
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged((user) => {
+            setUser(user);
+        });
+
+        return () => unsubscribe();
+    }, []);
 
     const handleToggle = (index) => {
         setActiveCard(index === activeCard ? null : index);
     };
 
+    const handleInputChange = (e) => {
+        setNewColaborador({
+            ...newColaborador,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    const handleAddColaborador = async (e) => {
+        e.preventDefault();
+
+        if (user && user.email === "presidenciaunired@gmail.com") {
+            try {
+                const docRef = await addDoc(collection(firestore, "Colaboradores"), newColaborador);
+                setColaboradores([...colaboradores, { id: docRef.id, ...newColaborador }]);
+                setNewColaborador({ nombre: "", descripcion: "", linkImagen: "" });
+            } catch (error) {
+                console.error("Error añadiendo documento: ", error);
+            }
+        }
+    };
+
+
+    const handleDelete = async (id) => {
+        if (user && user.email === "presidenciaunired@gmail.com") {
+            try {
+                await deleteDoc(doc(firestore, "Colaboradores", id));
+                setColaboradores(colaboradores.filter((colaborador) => colaborador.id !== id));
+            } catch (error) {
+                console.error("Error borrando documento: ", error);
+            }
+        }
+    };
+
     return (
         <div className="container mt-5 main-container-colab">
             <h1>Colaboradores</h1>
+            {user && user.email === "presidenciaunired@gmail.com" && (
+                <form onSubmit={handleAddColaborador} className="mt-4 mb-5">
+                    <h2 className="mb-3">Añade un nuevo colaborador colaborador</h2>
+
+                    <div className="mb-3 mt-3">
+                        <label className="form-label">Nombre</label>
+                        <input
+                            type="text"
+                            name="nombre"
+                            value={newColaborador.nombre}
+                            onChange={handleInputChange}
+                            placeholder="Nombre"
+                            required
+                            className="form-control"
+                            maxLength="70"
+                        />
+                    </div>
+
+                    <div className="mb-3">
+                        <label className="form-label">Descripción</label>
+                        <textarea
+                            type="text"
+                            name="descripcion"
+                            value={newColaborador.descripcion}
+                            onChange={handleInputChange}
+                            placeholder="Descripción"
+                            required
+                            className="form-control"
+                            rows="4"
+                            maxLength="285"
+                        />
+                    </div>
+
+                    <div className="mb-3">
+                        <label className="form-label">Link de la imagen</label>
+                        <input
+                            type="text"
+                            name="linkImagen"
+                            value={newColaborador.linkImagen}
+                            onChange={handleInputChange}
+                            placeholder="Link de la imagen"
+                            required
+                            className="form-control"
+                        />
+                    </div>
+
+                    <button type="submit" className="btn btn-success">Añadir</button>
+                </form>
+            )}
+
             <Row xs={1} sm={1} md={2} lg={3}>
                 {colaboradores.map((card, index) => (
                     <Col className="mb-5" key={index}>
@@ -30,6 +134,9 @@ const Colaboradores = () => {
                             showBack={index === activeCard}
                             onToggle={() => handleToggle(index)}
                         />
+                        {user && user.email === "presidenciaunired@gmail.com" && (
+                            <button className="btn btn-danger mt-2" onClick={() => handleDelete(card.id)}>Borrar</button>
+                        )}
                     </Col>
                 ))}
             </Row>

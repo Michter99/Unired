@@ -4,6 +4,8 @@ import NavBar from "../Layout/NavBar";
 import Inicio from "../Inicio/Inicio";
 import Noticias from "../Noticias/Noticias";
 import Colaboradores from "../Colaboradores/Colaboradores";
+import Blog from "../Blog/Blog"
+import ProtectedRoute from './ProtectedRoute';
 import Contacto from "../Contacto/Contacto";
 import Footer from "../Layout/Footer";
 
@@ -15,6 +17,7 @@ function Home() {
         <Route path="/" element={<Inicio />} />
         <Route path="/noticias" element={<Noticias />} />
         <Route path="/colaboradores" element={<Colaboradores />} />
+        <Route path="blog" element={<ProtectedRoute><Blog /></ProtectedRoute>} />
         <Route path="/contacto" element={<Contacto />} />
       </Routes>
       <Footer />
