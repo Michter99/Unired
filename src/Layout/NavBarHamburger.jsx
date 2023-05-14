@@ -9,18 +9,27 @@ const googleProvider = new GoogleAuthProvider();
 const NavBarHamburger = ({ isOpen, handleClose }) => {
   const [user, setUser] = useState(null);
 
+
   useEffect(() => {
+
+    const validDomains = ['up.edu.mx', 'tec.mx'];
+    const adminEmail = 'presidenciaunired@gmail.com';
+
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
-        // User is signed in.
-        setUser(user);
+        const emailDomain = user.email.split('@')[1];
+
+        if (validDomains.includes(emailDomain) || user.email === adminEmail) {
+          setUser(user);
+        } else {
+          signOut(auth);
+          alert('Lo sentimos, solo los usuarios con ciertos dominios pueden iniciar sesión.');
+        }
       } else {
-        // User is signed out.
         setUser(null);
       }
     });
 
-    // Cleanup subscription on unmount
     return () => unsubscribe();
   }, []);
 
@@ -60,7 +69,6 @@ const NavBarHamburger = ({ isOpen, handleClose }) => {
           <Link onClick={handleClose} to="/contacto">
             Contacto
           </Link>
-
         </div>
       </div>
     </div>
